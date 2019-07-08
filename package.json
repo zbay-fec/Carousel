@@ -21,7 +21,9 @@
   "homepage": "https://github.com/landon-baker/Carousel#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "bluebird": "^3.5.5",
     "express": "^4.17.1",
+    "mongoose": "^5.6.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.35.2",
