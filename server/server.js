@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const { Image, Product } = require('../db');
 require('dotenv').config();
@@ -9,6 +10,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW
 
 app.use(express.static(path.join(__dirname, '../client/dist/')));
 app.use(express.json());
+app.use(cors());
 
 app.get('/products', (req, res) => {
   Product.find()
