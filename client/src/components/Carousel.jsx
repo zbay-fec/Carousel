@@ -51,7 +51,7 @@ export default class Carousel extends React.Component {
     return (
       <div>
         <h1 id="example">Carousel goes here</h1>
-        <h4>{this.state.relatedProducts.length === 0 ? '' : this.state.relatedProducts[0].name}</h4>
+        <h4>{this.state.relatedProducts.length === 0 ? '' : this.state.currentProduct.name}</h4>
         {/* <img width="100" height="100" src={this.state.images.length === 0 ? '#' : this.state.images[0].imageURL}></img> */}
       </div>
     );
