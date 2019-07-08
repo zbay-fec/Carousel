@@ -8,6 +8,7 @@ const productSchema = mongoose.Schema({
 });
 
 const imageSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
   prodId: String,
   imageURL: String
 });

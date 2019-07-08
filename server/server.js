@@ -60,4 +60,11 @@ app.get('/product:id', (req, res) => {
     });
 });
 
+app.get('/images:id', (req, res) => {
+  Image.find({productId: req.query.prodID})
+    .exec()
+    .then(results => res.status(200).send(results))
+    .catch(err => res.status(500).json({message: 'There was an error with your request', error: err}));
+});
+
 app.listen(3008, () => console.log('Up and running on port 3008'));
