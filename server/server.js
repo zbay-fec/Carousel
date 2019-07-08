@@ -3,8 +3,9 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const { Image, Product } = require('../db');
+require('dotenv').config();
 
-mongoose.connect(`mongodb+srv://landon:${process.env.MONGO_PW}@feccarousel-satgh.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@feccarousel-satgh.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true });
 
 app.use(express.static(path.join(__dirname, '../client/dist/')));
 app.use(express.json());
