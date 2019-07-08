@@ -18,7 +18,6 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/products/category', (req, res) => {
-  console.log('category is: ', req.query.cat);
   Product.find({category: req.query.cat})
     .exec()
     .then(results => res.status(200).send(results))

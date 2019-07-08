@@ -14,10 +14,7 @@ export default class Carousel extends React.Component {
   componentDidMount() {
     window.addEventListener('productChanged', e => this.setState({currentProductId: e.detail.id}));
     this.getCurrentProduct(this.state.currentProductId)
-      .then(() => {
-        console.log('trying to get related with this category: ', this.state.currentProduct.category);
-        this.getRelatedProductsWithImages(this.state.currentProduct.category);
-      });
+      .then(() => this.getRelatedProductsWithImages(this.state.currentProduct.category));
   }
 
   getCurrentProduct(prodID) {
