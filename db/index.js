@@ -4,10 +4,12 @@ const productSchema = mongoose.Schema({
   _id: String,
   name: String,
   price: Number,
-  condition: String
+  category: String,
+  itemDescription: String
 });
 
 const imageSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
   prodId: String,
   imageURL: String
 });
