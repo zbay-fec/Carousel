@@ -54,6 +54,7 @@ export default class Carousel extends React.Component {
     return (
       <div>
         <h1 id="example">Carousel goes here</h1>
+        <h5>VPX329p-knives WMX262p-swords VRZ523q-food JXE911a-flashlight XEC106q-crossbow AKG030k-tents</h5>
         <div>
           <ImageContainer products={this.state.relatedProducts} />
         </div>

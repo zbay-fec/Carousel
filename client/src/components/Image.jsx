@@ -1,10 +1,15 @@
 import React from 'react';
+import lineClamp from 'line-clamp';
+import ProductName from './ProductName.jsx';
 
 const Image = ({ product }) => (
-  <div id={product._id}>
-    <img src={product.images[0].imageURL} height="100" width="100"></img>
+  <div className="imageBox">
+    <img src={product.images[0].imageURL} height="180" width="180"></img>
     <br></br>
-    <a href="#">{product.name.slice(0, 43)}...</a> 
+    <div className="productName">
+      <a href="#"><ProductName product={product} /></a>
+    </div>
+     
     <div>${product.price}</div>
   </div>
 );

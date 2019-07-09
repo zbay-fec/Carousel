@@ -1,0 +1,15 @@
+.imageBox {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 5px;
+  width: 197px;
+  height: 303px
+}
+
+.productName {
+  line-height: 1.2em;
+  max-height: 2.4em;
+  overflow: hidden;
+  overflow-wrap: word-break;
+  position: relative;
+}
