@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import ImageContainer from './ImageContainer.jsx';
+import Image from './Image.jsx';
+import BHCarousel from '@brainhubeu/react-carousel';
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -61,19 +62,30 @@ export default class Carousel extends React.Component {
   }
 
   render() {
+    let slides = [];
+    if (this.state.relatedProducts.length) {
+      slides = this.state.relatedProducts
+        .filter(product => product._id !== this.state.currentProductId) // don't show current product
+        .map(product => <Image key={product._id} handleClick={this.handleClick} product={product}/>);
+    }
+    
     return (
       <div>
-        <h1 id="example">Carousel goes here</h1>
         <h5>VPX329p-knives WMX262p-swords VRZ523q-food JXE911a-flashlight XEC106q-crossbow AKG030k-tents</h5>
-        <div>
-          <ImageContainer 
-            products={this.state.relatedProducts}
-            handleClick={this.handleClick}
-          />
-        </div>
+        <div className="imageContainer">
+          <span>People who viewed this item also viewed</span>
+          <br></br>
+          <div>
+            <BHCarousel 
+              arrows
+              slides={slides}
+              slidesPerPage={6}
+              slidesPerScroll={6}
+            >
+            </BHCarousel> 
+          </div>
+        </div>  
       </div>
     );
   }
 }
-
-// THIS IS A TEST BRANCH
