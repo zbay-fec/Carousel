@@ -58,7 +58,6 @@ export default class Carousel extends React.Component {
         <div>
           <ImageContainer products={this.state.relatedProducts} />
         </div>
-        {/* <img width="100" height="100" src={this.state.images.length === 0 ? '#' : this.state.images[0].imageURL}></img> */}
       </div>
     );
   }
