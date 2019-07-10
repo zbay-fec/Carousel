@@ -1,12 +1,12 @@
 import React from 'react';
 import ProductName from './ProductName.jsx';
 
-const Image = ({ product }) => (
+const Image = ({ product, handleClick }) => (
   <div className="imageBox">
     <img src={product.images[0].imageURL} height="180" width="180"></img>
     <br></br>
     <div className="productName">
-      <a id={product._id} href="#"><ProductName product={product} /></a>
+      <a onClick={(e) => handleClick(e, product._id)} id={product._id} href="#"><ProductName product={product} /></a>
     </div>
      
     <div className="price">${product.price}</div>
