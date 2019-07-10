@@ -1,9 +1,17 @@
+body {
+  font-family: "Helvetica neue",Helvetica,Verdana,Sans-serif;
+}
+
 .imageBox {
   display: inline-block;
-  border: 1px solid black;
-  margin: 5px;
+  border: 1px solid transparent;
   width: 197px;
-  height: 303px
+  height: 303px;
+  padding: 7px;
+}
+
+.imageBox:hover {
+  border-color: black;
 }
 
 .productName {
@@ -11,5 +19,14 @@
   max-height: 2.4em;
   overflow: hidden;
   overflow-wrap: word-break;
-  position: relative;
+}
+
+.price {
+  margin-top: 15px;
+  font-weight: 900;
+}
+
+.shipping {
+  color: #767676;
+  font-size: 0.8em;
 }

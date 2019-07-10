@@ -1,5 +1,4 @@
 import React from 'react';
-import lineClamp from 'line-clamp';
 import ProductName from './ProductName.jsx';
 
 const Image = ({ product }) => (
@@ -10,7 +9,8 @@ const Image = ({ product }) => (
       <a href="#"><ProductName product={product} /></a>
     </div>
      
-    <div>${product.price}</div>
+    <div className="price">${product.price}</div>
+    <div className="shipping">Free Shipping</div>
   </div>
 );
 
