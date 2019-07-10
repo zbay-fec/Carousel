@@ -6,7 +6,7 @@ const Image = ({ product }) => (
     <img src={product.images[0].imageURL} height="180" width="180"></img>
     <br></br>
     <div className="productName">
-      <a href="#"><ProductName product={product} /></a>
+      <a id={product._id} href="#"><ProductName product={product} /></a>
     </div>
      
     <div className="price">${product.price}</div>

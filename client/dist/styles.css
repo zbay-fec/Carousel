@@ -1,13 +1,21 @@
 body {
   font-family: "Helvetica neue",Helvetica,Verdana,Sans-serif;
+  margin: 0;
+}
+
+.imageContainer {
+  width: 1215px;
+  height: 345px;
+  border: 1px solid black;
+  padding-left: 20px;
 }
 
 .imageBox {
   display: inline-block;
   border: 1px solid transparent;
-  width: 197px;
+  width: 185px;
   height: 303px;
-  padding: 7px;
+  padding: 5px;
 }
 
 .imageBox:hover {
