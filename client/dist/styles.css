@@ -19,19 +19,30 @@ body {
 }
 
 .imageBox:hover {
-  border-color: black;
+  border-color: #333;
 }
 
 .productName {
   line-height: 1.2em;
   max-height: 2.4em;
   overflow: hidden;
-  overflow-wrap: word-break;
+  overflow-wrap: 'word-break';
+  font-size: 0.89em;
+}
+
+.productLink {
+  color: #333;
+  text-decoration: none;
+}
+.productName:hover {
+  text-decoration: underline;
 }
 
 .price {
-  margin-top: 15px;
-  font-weight: 900;
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 17px;
+  color: #333;
 }
 
 .shipping {
@@ -71,7 +82,9 @@ a:hover, .productImage {
 
 .suggestion {
   padding: 20px 0px 0px 15px;
-  font-size: 1.05em;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
 }
 
 .slideCount {
@@ -80,9 +93,10 @@ a:hover, .productImage {
 }
 
 .feedback {
-  color: black;
+  color: #333;
   float: right;
-  font-size: 0.6em;
+  font-size: 11px;
+  font-weight: 400;
   text-decoration: none;
   margin-right: 20px;
 }
