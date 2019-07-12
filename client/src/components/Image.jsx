@@ -3,7 +3,7 @@ import ProductName from './ProductName.jsx';
 
 const Image = ({ product, handleClick }) => (
   <div className="imageBox">
-    <img src={product.images[0].imageURL} height="180" width="180"></img>
+    <img className="productImage" src={product.images[0].imageURL} onClick={(e) => handleClick(e, product._id)} height="180" width="180"></img>
     <br></br>
     <div className="productName">
       <a onClick={(e) => handleClick(e, product._id)} id={product._id} href="#"><ProductName product={product} /></a>

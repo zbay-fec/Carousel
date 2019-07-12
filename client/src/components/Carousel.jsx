@@ -7,11 +7,15 @@ export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProductId: 'AVR693z',
+      currentProductId: '',
       currentProduct: {},
-      relatedProducts: []
+      relatedProducts: [],
+      carousel1Value: 0,
+      carousel2Value: 0
     };
     this.handleClick = this.handleClick.bind(this);
+    this.carousel1OnChange = this.carousel1OnChange.bind(this);
+    this.carousel2OnChange = this.carousel2OnChange.bind(this);
   }
 
   componentDidMount() {
@@ -61,6 +65,14 @@ export default class Carousel extends React.Component {
     }));
   }
 
+  carousel1OnChange(carousel1Value) {
+    this.setState({ carousel1Value });
+  }
+
+  carousel2OnChange(carousel2Value) {
+    this.setState({ carousel2Value });
+  }
+
   render() {
     let slides = [];
     if (this.state.relatedProducts.length) {
@@ -71,21 +83,51 @@ export default class Carousel extends React.Component {
     
     return (
       <div>
-        <h5>VPX329p-knives WMX262p-swords VRZ523q-food JXE911a-flashlight XEC106q-crossbow AKG030k-tents</h5>
-        <div className="imageContainer">
-          <span>People who viewed this item also viewed</span>
-          <br></br>
-          <div>
-            <BHCarousel 
-              arrows
-              slides={slides}
-              slidesPerPage={6}
-              slidesPerScroll={6}
-            >
-            </BHCarousel> 
-          </div>
-        </div>  
-      </div>
+        <div>
+          <div className="imageContainer">
+            <div className="suggestion">
+              People who viewed this item also viewed
+              <span className="slideCount">{this.state.carousel1Value === 0 ? 1 : 2}/2 </span>
+            </div>
+            <br></br>
+            <div>
+              <BHCarousel 
+                arrowLeft={<div className="arrow-left"> &lt; </div>}
+                arrowRight={<div className="arrow-right"> &gt; </div>}
+                addArrowClickHandler
+                slides={slides.slice(0, 12)}
+                slidesPerPage={6}
+                slidesPerScroll={6}
+                value={this.state.carousel1Value}
+                onChange={this.carousel1OnChange}
+              >
+              </BHCarousel> 
+            </div>
+          </div>  
+        </div>
+        <div>
+          <div className="imageContainer">
+            <div className="suggestion">
+              Frequently Bought Together
+              <span className="slideCount">{this.state.carousel2Value === 0 ? 1 : 2}/2 </span>
+            </div>
+            <br></br>
+            <div>
+              <BHCarousel 
+                arrowLeft={<div className="arrow-left"> &lt; </div>}
+                arrowRight={<div className="arrow-right"> &gt; </div>}
+                addArrowClickHandler
+                slides={[...slides.slice(10), ...slides.slice(0, 3)]}
+                slidesPerPage={6}
+                slidesPerScroll={6}
+                value={this.state.carousel2Value}
+                onChange={this.carousel2OnChange}
+              >
+              </BHCarousel> 
+            </div>
+          </div>  
+        </div>
+      </div>  
     );
   }
 }
