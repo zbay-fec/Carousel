@@ -78,3 +78,15 @@ a:hover, .productImage {
   margin: 0px 10px;
   color: #767676;
 }
+
+.feedback {
+  color: black;
+  float: right;
+  font-size: 0.6em;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.feedback:hover {
+  text-decoration: underline;
+}

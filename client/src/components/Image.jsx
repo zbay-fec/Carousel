@@ -9,7 +9,7 @@ const Image = ({ product, handleClick }) => (
       <a onClick={(e) => handleClick(e, product._id)} id={product._id} href="#"><ProductName product={product} /></a>
     </div>
      
-    <div className="price">${product.price}</div>
+    <div className="price">${product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</div>
     <div className="shipping">Free Shipping</div>
   </div>
 );

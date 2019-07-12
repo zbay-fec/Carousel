@@ -88,6 +88,7 @@ export default class Carousel extends React.Component {
             <div className="suggestion">
               People who viewed this item also viewed
               <span className="slideCount">{this.state.carousel1Value === 0 ? 1 : 2}/2 </span>
+              <a href="#" className="feedback">Feedback on our suggestions</a>
             </div>
             <br></br>
             <div>
@@ -110,6 +111,7 @@ export default class Carousel extends React.Component {
             <div className="suggestion">
               Frequently Bought Together
               <span className="slideCount">{this.state.carousel2Value === 0 ? 1 : 2}/2 </span>
+              <a href="#" className="feedback">Feedback on our suggestions</a>
             </div>
             <br></br>
             <div>
