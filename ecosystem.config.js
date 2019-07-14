@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'carousel',
+    name: 'carousel2',
     script: './server/server.js'
   }],
   deploy: {
