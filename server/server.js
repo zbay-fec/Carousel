@@ -1,10 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const { Image, Product } = require('../db');
-require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@feccarousel-satgh.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true });
 
@@ -53,4 +53,4 @@ app.get('/images/prodID', (req, res) => {
     .catch(err => res.status(500).json({message: 'There was an error with your request', error: err}));
 });
 
-app.listen(3008, () => console.log('Up and running on port 3008'));
+app.listen(3008, process.env.AWS_HOST, () => console.log('Up and running on port 3008'));
