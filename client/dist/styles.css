@@ -1,14 +1,16 @@
 body {
   font-family: "Helvetica neue",Helvetica,Verdana,Sans-serif;
   margin: 0;
-  background-color: #F5F5F5;
+  /* background-color: #F5F5F5; */
+  background-color: red;
 }
 
 .imageContainer {
   width: 99%;
   height: 360px;
   margin: 5px 0px 70px 5px;
-  border: 1px solid #a5a5a5
+  border: 1px solid #a5a5a5;
+  background-color: #FFF;
 }
 
 .imageBox {
