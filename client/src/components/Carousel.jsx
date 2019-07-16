@@ -7,7 +7,7 @@ export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProductId: 'CKO986x',
+      currentProductId: 'AVR693z',
       currentProduct: {},
       relatedProducts: [],
       carousel1Value: 0,
