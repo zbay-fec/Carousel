@@ -6,7 +6,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-18-218-160-12.us-east-2.compute.amazonaws.com',
+      host: 'ec2-3-130-208-95.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/FECCarousel.pem',
       ref: 'origin/master',
       repo: 'git@github.com:zbay-fec/Carousel.git',
