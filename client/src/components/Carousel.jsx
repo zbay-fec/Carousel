@@ -32,18 +32,18 @@ export default class Carousel extends React.Component {
   }
 
   getCurrentProduct(prodID) {
-    return axios.get(`http://ec2-18-218-160-12.us-east-2.compute.amazonaws.com:3008/products/id?id=${prodID}`)
+    return axios.get(`http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/products/id?id=${prodID}`)
       .then(result => result.data)
       .then(product => this.setState({currentProduct: product}))
       .catch(err => console.log(err));
   }
 
   getRelatedProductsWithImages(category) {
-    return axios.get(`http://ec2-18-218-160-12.us-east-2.compute.amazonaws.com:3008/products/category?cat=${category}`)
+    return axios.get(`http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/products/category?cat=${category}`)
       .then(results => results.data)
       .then(results => {
         return Promise.all(results.map(product => {
-          return axios.get(`http://ec2-18-218-160-12.us-east-2.compute.amazonaws.com:3008/images/prodID?prodID=${product._id}`)
+          return axios.get(`http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/images/prodID?prodID=${product._id}`)
             .then(results => results.data)
             .then(results => {
               product.images = results;
