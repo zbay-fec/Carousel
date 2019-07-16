@@ -1,7 +1,10 @@
 module.exports = {
   apps: [{
     name: 'carousel',
-    script: './server/server.js'
+    script: './server/server.js',
+    env: {
+      NODE_ENV: 'production'
+    }
   }],
   deploy: {
     production: {
