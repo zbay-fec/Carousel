@@ -11,7 +11,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:zbay-fec/Carousel.git',
       path: '/home/ubuntu/carousel',
-      'post-deploy': 'npm install && npx webpack && pm2 startOrRestart ./ecosystem.config.js'
+      'post-deploy': 'npm install && npx webpack --config ./webpack.config.js && pm2 startOrRestart ./ecosystem.config.js'
     }
   }
 }
