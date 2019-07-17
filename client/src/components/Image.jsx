@@ -10,7 +10,7 @@ const Image = ({ product, handleClick }) => (
     </div>
      
     <div className="price">${product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</div>
-    <div className="shipping">Free Shipping</div>
+    <div className="carouselShipping">Free Shipping</div>
   </div>
 );
 
