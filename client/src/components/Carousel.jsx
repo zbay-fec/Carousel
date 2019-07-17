@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Image from './Image.jsx';
 import BHCarousel from '@brainhubeu/react-carousel';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -131,11 +131,13 @@ export default class Carousel extends React.Component {
           </div>  
         </div>
         <div>
-          <ul>
-            <li>
-              <Link to="/cart">Cart</Link>
-            </li>
-          </ul>
+          <Router>
+            <ul>
+              <li>
+                <Link to="/cart">Cart</Link>
+              </li>
+            </ul>
+          </Router>
         </div>
       </div>  
     );
