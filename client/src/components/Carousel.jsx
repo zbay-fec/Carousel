@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Image from './Image.jsx';
 import BHCarousel from '@brainhubeu/react-carousel';
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import Image from './Image.jsx';
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -20,50 +19,73 @@ export default class Carousel extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('productChanged', e => this.setState({currentProductId: e.detail.id}));
-    this.getCurrentProduct(this.state.currentProductId)
-      .then(() => this.getRelatedProductsWithImages(this.state.currentProduct.category));
+    window.addEventListener('productChanged', e =>
+      this.setState({ currentProductId: e.detail.id })
+    );
+    this.getCurrentProduct(this.state.currentProductId).then(() =>
+      this.getRelatedProductsWithImages(this.state.currentProduct.category)
+    );
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.currentProductId !== prevState.currentProductId) {
-      this.getCurrentProduct(this.state.currentProductId)
-        .then(() => this.getRelatedProductsWithImages(this.state.currentProduct.category));
+      this.getCurrentProduct(this.state.currentProductId).then(() =>
+        this.getRelatedProductsWithImages(this.state.currentProduct.category)
+      );
     }
   }
 
   getCurrentProduct(prodID) {
-    return axios.get(`http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/products/id?id=${prodID}`)
+    return axios
+      .get(
+        `http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/products/id?id=${prodID}`
+      )
       .then(result => result.data)
-      .then(product => this.setState({currentProduct: product}))
+      .then(product => this.setState({ currentProduct: product }))
       .catch(err => console.log(err));
   }
 
   getRelatedProductsWithImages(category) {
-    return axios.get(`http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/products/category?cat=${category}`)
+    return axios
+      .get(
+        `http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/products/category?cat=${category}`
+      )
       .then(results => results.data)
       .then(results => {
-        return Promise.all(results.map(product => {
-          return axios.get(`http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/images/prodID?prodID=${product._id}`)
-            .then(results => results.data)
-            .then(results => {
-              product.images = results;
-              return product;
-            })
-            .catch(err => console.log('There was an error fetching images ', err));
-        }));
+        return Promise.all(
+          results.map(product => {
+            return axios
+              .get(
+                `http://ec2-3-130-208-95.us-east-2.compute.amazonaws.com:3008/images/prodID?prodID=${product._id}`
+              )
+              .then(results => results.data)
+              .then(results => {
+                product.images = results;
+                return product;
+              })
+              .catch(err =>
+                console.log('There was an error fetching images ', err)
+              );
+          })
+        );
       })
-      .then(productsWithImages => this.setState({relatedProducts: productsWithImages}))
-      .catch(err => console.log('There was an error getting related products ', err));
+      .then(productsWithImages =>
+        this.setState({ relatedProducts: productsWithImages })
+      )
+      .catch(err =>
+        console.log('There was an error getting related products ', err)
+      );
   }
 
   handleClick(e, id) {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('productChanged', {
-      detail: {
-        id: id
-      }
-    }));
+    window.dispatchEvent(
+      new CustomEvent('productChanged', {
+        detail: {
+          id: id
+        }
+      })
+    );
   }
 
   carousel1OnChange(carousel1Value) {
@@ -79,21 +101,31 @@ export default class Carousel extends React.Component {
     if (this.state.relatedProducts.length) {
       slides = this.state.relatedProducts
         .filter(product => product._id !== this.state.currentProductId) // don't show current product
-        .map(product => <Image key={product._id} handleClick={this.handleClick} product={product}/>);
+        .map(product => (
+          <Image
+            key={product._id}
+            handleClick={this.handleClick}
+            product={product}
+          />
+        ));
     }
-    
+
     return (
       <div>
         <div>
           <div className="imageContainer">
             <div className="suggestion">
               People who viewed this item also viewed
-              <span className="slideCount">{this.state.carousel1Value === 0 ? 1 : 2}/2 </span>
-              <a href="#" className="feedback">Feedback on our suggestions</a>
+              <span className="slideCount">
+                {this.state.carousel1Value === 0 ? 1 : 2}/2{' '}
+              </span>
+              <a href="#" className="feedback">
+                Feedback on our suggestions
+              </a>
             </div>
             <br></br>
             <div>
-              <BHCarousel 
+              <BHCarousel
                 arrowLeft={<div className="arrow-left"> &lt; </div>}
                 arrowRight={<div className="arrow-right"> &gt; </div>}
                 addArrowClickHandler
@@ -102,21 +134,24 @@ export default class Carousel extends React.Component {
                 slidesPerScroll={6}
                 value={this.state.carousel1Value}
                 onChange={this.carousel1OnChange}
-              >
-              </BHCarousel> 
+              ></BHCarousel>
             </div>
-          </div>  
+          </div>
         </div>
         <div>
           <div className="imageContainer">
             <div className="suggestion">
               Frequently Bought Together
-              <span className="slideCount">{this.state.carousel2Value === 0 ? 1 : 2}/2 </span>
-              <a href="#" className="feedback">Feedback on our suggestions</a>
+              <span className="slideCount">
+                {this.state.carousel2Value === 0 ? 1 : 2}/2{' '}
+              </span>
+              <a href="#" className="feedback">
+                Feedback on our suggestions
+              </a>
             </div>
             <br></br>
             <div>
-              <BHCarousel 
+              <BHCarousel
                 arrowLeft={<div className="arrow-left"> &lt; </div>}
                 arrowRight={<div className="arrow-right"> &gt; </div>}
                 addArrowClickHandler
@@ -125,21 +160,11 @@ export default class Carousel extends React.Component {
                 slidesPerScroll={6}
                 value={this.state.carousel2Value}
                 onChange={this.carousel2OnChange}
-              >
-              </BHCarousel> 
+              ></BHCarousel>
             </div>
-          </div>  
+          </div>
         </div>
-        <div>
-          <Router>
-            <ul>
-              <li>
-                <Link to="/cart">Cart</Link>
-              </li>
-            </ul>
-          </Router>
-        </div>
-      </div>  
+      </div>
     );
   }
 }
