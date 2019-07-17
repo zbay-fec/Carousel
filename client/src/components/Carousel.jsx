@@ -52,7 +52,7 @@ export default class Carousel extends React.Component {
           results.map(product => {
             return axios
               .get(
-                `http://zbay.landonbaker.measdfkj:3008/images/prodID?prodID=${product._id}`
+                `http://zbay.landonbaker.me:3008/images/prodID?prodID=${product._id}`
               )
               .then(results => results.data)
               .then(results => {
