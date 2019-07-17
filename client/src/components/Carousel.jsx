@@ -118,7 +118,7 @@ export default class Carousel extends React.Component {
     }
 
     if (this.props.showCart === true) {
-      return <></>;
+      return <div></div>;
     }
 
     return (
