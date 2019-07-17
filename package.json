@@ -33,6 +33,7 @@
     "react": "^16.8.6",
     "react-clamp-lines": "^3.0.2",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   },
