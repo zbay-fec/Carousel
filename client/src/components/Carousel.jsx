@@ -124,21 +124,21 @@ export default class Carousel extends React.Component {
     return (
       <div>
         <div>
-          <div className="imageContainer">
-            <div className="suggestion">
+          <div className="carouselImageContainer">
+            <div className="carouselSuggestion">
               People who viewed this item also viewed
-              <span className="slideCount">
+              <span className="carouselSlideCount">
                 {this.state.carousel1Value === 0 ? 1 : 2}/2{' '}
               </span>
-              <a href="#" className="feedback">
+              <a href="#" className="carouselFeedback">
                 Feedback on our suggestions
               </a>
             </div>
             <br></br>
             <div>
               <BHCarousel
-                arrowLeft={<div className="arrow-left"> &lt; </div>}
-                arrowRight={<div className="arrow-right"> &gt; </div>}
+                arrowLeft={<div className="carouselArrow-left"> &lt; </div>}
+                arrowRight={<div className="carouselArrow-right"> &gt; </div>}
                 addArrowClickHandler
                 slides={slides.slice(0, 12)}
                 slidesPerPage={6}
@@ -150,21 +150,21 @@ export default class Carousel extends React.Component {
           </div>
         </div>
         <div>
-          <div className="imageContainer">
-            <div className="suggestion">
+          <div className="carouselImageContainer">
+            <div className="carouselSuggestion">
               Frequently Bought Together
-              <span className="slideCount">
+              <span className="carouselSlideCount">
                 {this.state.carousel2Value === 0 ? 1 : 2}/2{' '}
               </span>
-              <a href="#" className="feedback">
+              <a href="#" className="carouselFeedback">
                 Feedback on our suggestions
               </a>
             </div>
             <br></br>
             <div>
               <BHCarousel
-                arrowLeft={<div className="arrow-left"> &lt; </div>}
-                arrowRight={<div className="arrow-right"> &gt; </div>}
+                arrowLeft={<div className="carouselArrow-left"> &lt; </div>}
+                arrowRight={<div className="carouselArrow-right"> &gt; </div>}
                 addArrowClickHandler
                 slides={[...slides.slice(10), ...slides.slice(0, 3)]}
                 slidesPerPage={6}
