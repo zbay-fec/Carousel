@@ -84,17 +84,6 @@ export default class Carousel extends React.Component {
     );
   }
 
-  handleCartClick(e) {
-    e.preventDefault();
-    window.dispatchEvent(
-      new CustomEvent('showCart', {
-        detail: {
-          showCart: true
-        }
-      })
-    );
-  }
-
   carousel1OnChange(carousel1Value) {
     this.setState({ carousel1Value });
   }
