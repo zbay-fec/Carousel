@@ -175,11 +175,6 @@ export default class Carousel extends React.Component {
             </div>
           </div>
         </div>
-        <div>
-          <button value="Cart" onClick={this.handleCartClick}>
-            Cart
-          </button>
-        </div>
       </div>
     );
   }
