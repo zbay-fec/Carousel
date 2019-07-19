@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
+const compression = require('compression');
 const mongoose = require('mongoose');
 const { Image, Product } = require('../db');
 
@@ -14,6 +15,7 @@ mongoose.connect(
 app.use(express.static(path.join(__dirname, '../client/dist/')));
 app.use(express.json());
 app.use(cors());
+app.use(compression());
 
 app.get('/products', (req, res) => {
   Product.find()
