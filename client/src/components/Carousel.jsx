@@ -151,6 +151,28 @@ export default class Carousel extends React.Component {
                   </div>
                 }
                 addArrowClickHandler
+                breakpoints={{
+                  1200: {
+                    slidesPerPage: 5,
+                    slidesPerScroll: 5
+                  },
+                  1000: {
+                    slidesPerPage: 4,
+                    slidesPerScroll: 4
+                  },
+                  800: {
+                    slidesPerPage: 3,
+                    slidesPerScroll: 3
+                  },
+                  650: {
+                    slidesPerPage: 2,
+                    slidesPerScroll: 2
+                  },
+                  450: {
+                    slidesPerPage: 1,
+                    slidesPerScroll: 1
+                  }
+                }}
                 slides={slides.slice(0, 12)}
                 slidesPerPage={6}
                 slidesPerScroll={6}
@@ -202,6 +224,28 @@ export default class Carousel extends React.Component {
                 slides={[...slides.slice(10), ...slides.slice(0, 3)]}
                 slidesPerPage={6}
                 slidesPerScroll={6}
+                breakpoints={{
+                  1200: {
+                    slidesPerPage: 5,
+                    slidesPerScroll: 5
+                  },
+                  1000: {
+                    slidesPerPage: 4,
+                    slidesPerScroll: 4
+                  },
+                  800: {
+                    slidesPerPage: 3,
+                    slidesPerScroll: 3
+                  },
+                  650: {
+                    slidesPerPage: 2,
+                    slidesPerScroll: 2
+                  },
+                  450: {
+                    slidesPerPage: 1,
+                    slidesPerScroll: 1
+                  }
+                }}
                 value={this.state.carousel2Value}
                 onChange={this.carousel2OnChange}
               ></BHCarousel>
