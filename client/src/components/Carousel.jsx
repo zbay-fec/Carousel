@@ -126,8 +126,30 @@ export default class Carousel extends React.Component {
             <br></br>
             <div>
               <BHCarousel
-                arrowLeft={<div className="carouselArrow-left"> &lt; </div>}
-                arrowRight={<div className="carouselArrow-right"> &gt; </div>}
+                arrowLeft={
+                  <div
+                    className={
+                      this.state.carousel1Value === 0
+                        ? 'carouselArrow-left carouselOpaque'
+                        : 'carouselArrow-left'
+                    }
+                  >
+                    {' '}
+                    &lt;{' '}
+                  </div>
+                }
+                arrowRight={
+                  <div
+                    className={
+                      this.state.carousel1Value === 0
+                        ? 'carouselArrow-right'
+                        : 'carouselArrow-right carouselOpaque'
+                    }
+                  >
+                    {' '}
+                    &gt;{' '}
+                  </div>
+                }
                 addArrowClickHandler
                 slides={slides.slice(0, 12)}
                 slidesPerPage={6}
@@ -152,8 +174,30 @@ export default class Carousel extends React.Component {
             <br></br>
             <div>
               <BHCarousel
-                arrowLeft={<div className="carouselArrow-left"> &lt; </div>}
-                arrowRight={<div className="carouselArrow-right"> &gt; </div>}
+                arrowLeft={
+                  <div
+                    className={
+                      this.state.carousel2Value === 0
+                        ? 'carouselArrow-left carouselOpaque'
+                        : 'carouselArrow-left'
+                    }
+                  >
+                    {' '}
+                    &lt;{' '}
+                  </div>
+                }
+                arrowRight={
+                  <div
+                    className={
+                      this.state.carousel2Value === 0
+                        ? 'carouselArrow-right'
+                        : 'carouselArrow-right carouselOpaque'
+                    }
+                  >
+                    {' '}
+                    &gt;{' '}
+                  </div>
+                }
                 addArrowClickHandler
                 slides={[...slides.slice(10), ...slides.slice(0, 3)]}
                 slidesPerPage={6}

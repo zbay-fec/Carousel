@@ -1,6 +1,6 @@
 body {
-  font-family: "Helvetica neue", Helvetica, Verdana, Sans-serif;
-  background-color: #F5F5F5;
+  font-family: 'Helvetica neue', Helvetica, Verdana, Sans-serif;
+  background-color: #f5f5f5;
 }
 
 .carouselImageContainer {
@@ -8,7 +8,7 @@ body {
   height: 360px;
   margin: 5px 0px 70px 5px;
   border: 1px solid #a5a5a5;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .carouselImageBox {
@@ -68,6 +68,14 @@ body {
   font-weight: 900;
   font-size: 1.5em;
   cursor: pointer;
+}
+
+.carouselOpaque {
+  opacity: 0.4;
+}
+
+.carouselOpaque:hover {
+  cursor: default;
 }
 
 .carouselArrow-right {
