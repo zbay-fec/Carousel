@@ -5,7 +5,7 @@ const Image = ({ product, handleClick }) => (
   <div className="carouselImageBox">
     <img
       className="carouselProductImage"
-      src={product.images[0].imageURL}
+      src={product.imageURL}
       onClick={e => handleClick(e, product._id)}
       height="180"
       width="180"

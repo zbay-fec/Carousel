@@ -4,7 +4,7 @@
   "description": "",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "jest",
+    "test": "mocha client/__tests__",
     "build": "webpack -d --watch",
     "server": "nodemon server/server.js",
     "restart": "pm2 startOrRestart ecosystem.config.js",
@@ -33,7 +33,6 @@
     "react": "^16.8.6",
     "react-clamp-lines": "^3.0.2",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   },
@@ -43,12 +42,14 @@
     "@babel/preset-react": "^7.0.0",
     "@testing-library/react": "^8.0.5",
     "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
     "compression": "^1.7.4",
     "css-loader": "^3.0.0",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "jest": "^24.8.0",
+    "mocha": "^6.2.0",
+    "mongodb-memory-server": "^5.1.5",
     "prettier": "^1.18.2",
     "style-loader": "^0.23.1"
   }

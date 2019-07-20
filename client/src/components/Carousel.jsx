@@ -56,7 +56,7 @@ export default class Carousel extends React.Component {
               )
               .then(results => results.data)
               .then(results => {
-                product.images = results;
+                product.imageURL = results[0].imageURL;
                 return product;
               })
               .catch(err =>
