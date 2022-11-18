@@ -34,7 +34,7 @@
     "react-clamp-lines": "^3.0.2",
     "react-dom": "^16.8.6",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
